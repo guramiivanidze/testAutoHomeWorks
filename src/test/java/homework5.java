@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 
+import com.codeborne.selenide.Condition;
+
 import static com.codeborne.selenide.Selectors.*;
 
 public class homework5 {
