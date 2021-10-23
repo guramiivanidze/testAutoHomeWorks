@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.$;
+
 import static com.codeborne.selenide.Selectors.*;
 
 public class homework5 {
@@ -22,7 +23,14 @@ public class homework5 {
         $(byId("month")).selectOption("Oct");
         $(byId("day")).selectOption("15");
         $(byId("year")).selectOption("1996");
-        $(byAttribute("name","sex")).click();
+        $(byText("Custom")).click();
         $(byAttribute("aria-label","Select your pronoun")).isDisplayed();
+
+        $(byAttribute("aria-label","Select your pronoun")).selectOption("He: \"Wish him a happy birthday!\"");
+
+        $("._58mt", 0).click();
+        $(byAttribute("aria-label","Select your pronoun")).shouldNotBe(Condition.visible);
+        $("._58mt", 1).click();
+        $(byAttribute("aria-label","Select your pronoun")).shouldNotBe(Condition.visible);
 }
 }
