@@ -2,19 +2,9 @@ import com.codeborne.selenide.Condition;
 import org.junit.Test;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.selector.ByAttribute;
 import static com.codeborne.selenide.Selenide.sleep;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By.ByClassName;
-
-import javax.lang.model.element.Element;
-import javax.sound.midi.Soundbank;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import static com.codeborne.selenide.Selenide.$;
