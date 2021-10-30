@@ -1,21 +1,19 @@
+
+import Chrome.RunChrome;
 import com.codeborne.selenide.Condition;
-import org.junit.Test;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Keys;
+import org.testng.annotations.Test;
+
+import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
-import org.openqa.selenium.Keys;
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selectors.*;
-
-public class lectureTasks {
+public class lectureTasks extends RunChrome {
     @Test
     public void lecTasks(){
-        WebDriverManager.chromedriver().setup();
-        Configuration.startMaximized = true;
-        Selenide.open("https://ee.ge/");
         $(byAttribute("class","btn-register mb-2 mr-4")).click();
         $(byId("firstName")).setValue("gurami");
         $(byId("lastName")).setValue("ivanidze");
@@ -27,9 +25,7 @@ public class lectureTasks {
     }
     @Test
     public void negativeTest(){
-        WebDriverManager.chromedriver().setup();
-        Configuration.startMaximized = true;
-        Selenide.open("https://ee.ge/");
+
         $(byAttribute("class","btn-register mb-2 mr-4")).click();
         $(byText("სწრაფი რეგისტრაცია")).shouldBe(Condition.visible);
         System.out.println($(byId("singup")).isEnabled());
